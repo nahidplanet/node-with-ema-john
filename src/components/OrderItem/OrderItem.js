@@ -1,11 +1,11 @@
-import { XIcon, TrashIcon } from '@heroicons/react/solid';
+import { TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
 
 const OrderItem = () => {
   return (
     <div>
 
-      <div class="grid grid-cols-[2fr,6fr,1fr] my-2 items-center  rounded-lg border shadow-md md:flex-row md:max-w-xl dark:border-gray-700 bg-[#FFE0B3] ">
+      <div class="grid grid-cols-[2fr,6fr,1fr] my-2 items-center mx-auto rounded-lg border shadow-md md:flex-row md:max-w-xl dark:border-gray-700 bg-[#FFE0B3] ">
         <div className="image p-2">
           <img class="object-cover w-32 bg-black h-32 rounded-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="https://flowbite.com/docs/images/products/product-1.png" alt="" />
         </div>
