@@ -10,10 +10,11 @@ import SingIn from './components/SingIn/SingIn';
 import SingUp from './components/SingUp/SingUp';
 import NotFound from './components/NotFound/NotFound';
 import ForgetPassword from './components/ForgetPassword/ForgetPassword';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -26,7 +27,8 @@ function App() {
         <Route path='/forget' element={<ForgetPassword></ForgetPassword>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
-    </div>
+      <Footer></Footer>
+    </>
   );
 }
 
