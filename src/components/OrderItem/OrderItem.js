@@ -16,7 +16,7 @@ const OrderItem = () => {
             <p className="mb-2 text-sm font-normal text-gray-700 ">Quantity: 2</p>
           </div>
         </div>
-        <div className=" flex justify-center items-center bg-black w-10 h-10 border rounded-full cursor-pointer">
+        <div className=" flex justify-center mr-2 items-center bg-black w-10 h-10 border rounded-full cursor-pointer">
           <TrashIcon className='w-8 h-8  text-white'></TrashIcon>
         </div>
       </div>
