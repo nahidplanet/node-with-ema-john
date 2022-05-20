@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import github from "../../images/form/github.svg";
 import google from "../../images/form/google.svg";
 
@@ -8,7 +9,7 @@ const Login = () => {
     <>
 
       <main>
-        <section className="absolute w-full h-full">
+        <section className="absolute w-full mt-10">
           <div className="container mx-auto px-4 h-full">
             <div className="flex content-center items-center justify-center h-full">
               <div className="w-full lg:w-4/12 px-4">
@@ -21,7 +22,7 @@ const Login = () => {
                     </div>
                     <div className="btn-wrapper text-center">
                       <button
-                        className="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
+                        className="bg-white active:bg-gray-100 text-gray-800  px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
                         type="button"
                         style={{ transition: "all .15s ease" }}
                       >
@@ -33,7 +34,7 @@ const Login = () => {
                         Github
                       </button>
                       <button
-                        className="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
+                        className="bg-white active:bg-gray-100 text-gray-800  px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
                         type="button"
                         style={{ transition: "all .15s ease" }}
                       >
@@ -97,22 +98,10 @@ const Login = () => {
 
                       <div className="flex flex-wrap mt-6">
                         <div className="w-1/2">
-                          <a
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                            className="text-gray-700"
-                          >
-                            <small>Forgot password?</small>
-                          </a>
+                          <Link className="text-gray-700" to={'/forget'}><small>Forgot password?</small></Link>
                         </div>
                         <div className="w-1/2 text-right">
-                          <a
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                            className="text-gray-700"
-                          >
-                            <small>Create new account</small>
-                          </a>
+                          <Link className='className="text-gray-700"' to={'/singup'}><small>Create new account</small></Link>
                         </div>
                       </div>
                       

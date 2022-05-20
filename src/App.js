@@ -9,6 +9,7 @@ import Inventory from './components/Inventory/Inventory';
 import SingIn from './components/SingIn/SingIn';
 import SingUp from './components/SingUp/SingUp';
 import NotFound from './components/NotFound/NotFound';
+import ForgetPassword from './components/ForgetPassword/ForgetPassword';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/singin' element={<SingIn></SingIn>}></Route>
         <Route path='/singup' element={<SingUp></SingUp>}></Route>
+        <Route path='/forget' element={<ForgetPassword></ForgetPassword>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
