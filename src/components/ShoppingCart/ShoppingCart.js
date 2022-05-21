@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
+// import useCart from '../../hooks/useCart';
 
-const ShoppingCart = () => {
+const ShoppingCart = (props) => {
+  const {cart} = props;
+  console.log(cart);
   const [showModal, setShowModal] = useState(false);
   const [modal, setModal] = useState(true);
+  // const [cart] = useCart();
+  
+    const quantity = cart.reduce((x,y) => x+ y.quantity,0);
+    console.log(quantity);
+
+    const price = cart.reduce((x,y) => x+ y.price *quantity,0);
+    const shipping = cart.reduce((x,y) => x+ y.shipping,0);
+    const tax = parseInt(((price+shipping)*0.1).toFixed(2));
+    const total = (price+shipping+ tax);
+  
+
 
   return (
     <div className='order-1 md:order-2   '>
@@ -29,17 +43,17 @@ const ShoppingCart = () => {
                       <h3 className="text-3xl font-semibold">
                         Cart Details
                       </h3>
-                      
+
                     </div>
                     {/*body*/}
                     <div className="relative p-6 flex-auto">
                       <div className="my-4 text-slate-500 text-lg leading-relaxed">
-                       <h1>Product</h1>
-                       <h1>Product</h1>
-                       <h1>Product</h1>
-                       <h1>Product</h1>
-                       <h1>Product</h1>
-                       <h1>Product</h1>
+                        <h1>Selected Items: {quantity}</h1>
+                        <h1>Total Price: ${price}</h1>
+                        <h1>Total Shipping Charge: ${shipping}</h1>
+                        <h1>Tax: ${tax}</h1>
+                        <h1>Grand Total: ${total}</h1>
+                        {props.children}
                       </div>
                     </div>
 
@@ -61,17 +75,12 @@ const ShoppingCart = () => {
           ) :
 
             <div className="hidden md:block order-1 sm:order-2 h-full bg-[#FFE0B3] sm:h-screen sm:mt-16 md:mt-0 py-7 px-6 md:sticky top-0 mb-10 md:mb-0  ">
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
-              <h1>PRODUCT : </h1>
+              <h1>Selected Items: {quantity}</h1>
+              <h1>Total Price: ${price}</h1>
+              <h1>Total Shipping Charge: ${shipping}</h1>
+              <h1>Tax: ${tax}</h1>
+              <h1>Grand Total: ${total}</h1>
+              {props.children}
             </div>
           }
 
